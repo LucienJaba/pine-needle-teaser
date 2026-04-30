@@ -142,38 +142,38 @@
         <h2>Apparel &amp; Products</h2>
       </div>
       <div class="apparel-grid">
-        <a href="#quote" class="apparel-card">
+        <button type="button" class="apparel-card" data-category="sweatshirts" data-images="assets/images/IMG_7199.jpg|assets/images/IMG_7201.jpg|assets/images/IMG_7189.jpg">
           <div class="apparel-img" style="background-image:url('assets/images/IMG_7199.jpg')"></div>
           <span>Sweatshirts</span>
-        </a>
-        <a href="#quote" class="apparel-card">
+        </button>
+        <button type="button" class="apparel-card" data-category="long-sleeve" data-images="assets/images/IMG_7200.jpg|assets/images/IMG_7214.jpg">
           <div class="apparel-img" style="background-image:url('assets/images/IMG_7200.jpg')"></div>
           <span>Long Sleeve</span>
-        </a>
-        <a href="#quote" class="apparel-card">
+        </button>
+        <button type="button" class="apparel-card" data-category="hats" data-images="assets/images/IMG_7201.jpg|assets/images/IMG_7205.jpg">
           <div class="apparel-img" style="background-image:url('assets/images/IMG_7201.jpg')"></div>
           <span>Hats</span>
-        </a>
-        <a href="#quote" class="apparel-card">
+        </button>
+        <button type="button" class="apparel-card" data-category="custom-mugs" data-images="assets/images/IMG_7203.jpg|assets/images/IMG_7196.jpg">
           <div class="apparel-img" style="background-image:url('assets/images/IMG_7203.jpg')"></div>
           <span>Custom Mugs</span>
-        </a>
-        <a href="#quote" class="apparel-card">
+        </button>
+        <button type="button" class="apparel-card" data-category="showroom" data-images="assets/images/IMG_7205.jpg|assets/images/IMG_7215.jpg|assets/images/IMG_7219.jpg">
           <div class="apparel-img" style="background-image:url('assets/images/IMG_7205.jpg')"></div>
           <span>Showroom</span>
-        </a>
-        <a href="#quote" class="apparel-card">
+        </button>
+        <button type="button" class="apparel-card" data-category="t-shirts" data-images="assets/images/IMG_7206.jpg|assets/images/IMG_7200.jpg|assets/images/IMG_7207.jpg">
           <div class="apparel-img" style="background-image:url('assets/images/IMG_7206.jpg')"></div>
           <span>T-Shirts</span>
-        </a>
-        <a href="#quote" class="apparel-card">
+        </button>
+        <button type="button" class="apparel-card" data-category="ladies" data-images="assets/images/IMG_7207.jpg|assets/images/IMG_7199.jpg">
           <div class="apparel-img" style="background-image:url('assets/images/IMG_7207.jpg')"></div>
           <span>Ladies</span>
-        </a>
-        <a href="#quote" class="apparel-card">
+        </button>
+        <button type="button" class="apparel-card" data-category="outerwear" data-images="assets/images/IMG_7214.jpg|assets/images/IMG_7191.jpg">
           <div class="apparel-img" style="background-image:url('assets/images/IMG_7214.jpg')"></div>
           <span>Outerwear</span>
-        </a>
+        </button>
       </div>
 
       <!-- Partner Brands -->
@@ -554,6 +554,18 @@
         <div class="form-group full-width">
           <label for="message">Project Details *</label>
           <textarea id="message" name="message" rows="5" required placeholder="Tell us about your project - what items, colors, design ideas, etc."></textarea>
+        </div>
+        <div class="form-group full-width">
+          <label for="files">Upload Your Design Files</label>
+          <div class="file-upload">
+            <input type="file" id="files" name="files" multiple accept="image/*,.pdf,.ai,.eps,.svg,.dst,.psd">
+            <label for="files" class="file-upload-label">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+              <span class="file-upload-text">Click to upload or drag and drop</span>
+              <span class="file-upload-hint">PNG, JPG, PDF, AI, EPS, SVG, DST, PSD &mdash; max 25MB total</span>
+            </label>
+            <div class="file-list" id="fileList"></div>
+          </div>
         </div>
         <button type="submit" class="btn btn-primary btn-lg">Submit Quote Request</button>
       </form>

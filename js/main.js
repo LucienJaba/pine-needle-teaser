@@ -104,6 +104,50 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // --- Apparel Category Click → Lightbox ---
+  let categoryImages = [];
+  const openCategoryLightbox = (imgs, startIndex = 0) => {
+    categoryImages = imgs;
+    currentIndex = startIndex;
+    lightboxImg.src = categoryImages[currentIndex];
+    lightbox.classList.add('active');
+    lightbox.dataset.mode = 'category';
+    document.body.style.overflow = 'hidden';
+  };
+
+  document.querySelectorAll('.apparel-card').forEach(card => {
+    card.addEventListener('click', (e) => {
+      e.preventDefault();
+      const imgs = (card.dataset.images || '').split('|').filter(Boolean);
+      if (imgs.length) openCategoryLightbox(imgs);
+    });
+  });
+
+  // Override prev/next when in category mode
+  const origShowPrev = showPrev;
+  const origShowNext = showNext;
+  lightbox.querySelector('.lightbox-prev').addEventListener('click', (e) => {
+    e.stopImmediatePropagation();
+    if (lightbox.dataset.mode === 'category' && categoryImages.length) {
+      currentIndex = (currentIndex - 1 + categoryImages.length) % categoryImages.length;
+      lightboxImg.src = categoryImages[currentIndex];
+    }
+  });
+  lightbox.querySelector('.lightbox-next').addEventListener('click', (e) => {
+    e.stopImmediatePropagation();
+    if (lightbox.dataset.mode === 'category' && categoryImages.length) {
+      currentIndex = (currentIndex + 1) % categoryImages.length;
+      lightboxImg.src = categoryImages[currentIndex];
+    }
+  });
+
+  // Reset mode when lightbox closes
+  const closeLightboxOriginal = closeLightbox;
+  lightbox.querySelector('.lightbox-close').addEventListener('click', () => {
+    lightbox.dataset.mode = '';
+    categoryImages = [];
+  });
+
   lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
   lightbox.querySelector('.lightbox-prev').addEventListener('click', showPrev);
   lightbox.querySelector('.lightbox-next').addEventListener('click', showNext);
@@ -139,6 +183,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   animateElements.forEach(el => observer.observe(el));
 
+  // --- File upload preview ---
+  const fileInput = document.getElementById('files');
+  const fileList = document.getElementById('fileList');
+  if (fileInput && fileList) {
+    fileInput.addEventListener('change', () => {
+      fileList.innerHTML = '';
+      Array.from(fileInput.files).forEach(file => {
+        const item = document.createElement('div');
+        item.className = 'file-item';
+        const sizeKB = (file.size / 1024).toFixed(1);
+        const sizeStr = file.size > 1024 * 1024 ? `${(file.size / 1024 / 1024).toFixed(1)} MB` : `${sizeKB} KB`;
+        item.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span>${file.name}</span><small>${sizeStr}</small>`;
+        fileList.appendChild(item);
+      });
+    });
+  }
+
   // --- Form handling ---
   const quoteForm = document.getElementById('quoteForm');
   if (quoteForm) {
@@ -147,6 +208,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const formData = new FormData(quoteForm);
       const data = Object.fromEntries(formData);
+
+      // Build file list info
+      const fileNames = fileInput && fileInput.files.length
+        ? Array.from(fileInput.files).map(f => `- ${f.name} (${(f.size/1024).toFixed(0)}KB)`).join('\n')
+        : 'No files attached';
 
       // Build mailto link as simple fallback
       const subject = encodeURIComponent('Quote Request from ' + data.name);
@@ -157,7 +223,9 @@ document.addEventListener('DOMContentLoaded', () => {
         `Service: ${data.service}\n` +
         `Quantity: ${data.quantity || 'Not specified'}\n` +
         `Needed By: ${data.deadline || 'Flexible'}\n\n` +
-        `Project Details:\n${data.message}`
+        `Project Details:\n${data.message}\n\n` +
+        `Attached Files:\n${fileNames}\n\n` +
+        `(Please attach the listed files manually to this email — file uploads will be supported on the live site.)`
       );
 
       // Show success message
