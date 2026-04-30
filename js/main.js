@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Show success message
       const btn = quoteForm.querySelector('button[type="submit"]');
       const originalText = btn.textContent;
-      btn.textContent = 'Sending...';
+      btn.textContent = 'Opening your email…';
       btn.disabled = true;
 
       // Open email client
