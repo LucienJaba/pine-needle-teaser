@@ -249,19 +249,21 @@ ul { list-style: none; }
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: var(--color-bg-dark) url('../assets/images/mountain-background.jpg') center bottom/cover no-repeat;
+  background: var(--color-bg-dark);
 }
 
-.hero-video-wrap {
+.hero-bg {
   position: absolute;
   inset: 0;
   z-index: 0;
 }
 
-.hero-video {
+.hero-mountain {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .hero-overlay {
@@ -269,10 +271,10 @@ ul { list-style: none; }
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(15,26,8,0.65) 0%,
-    rgba(15,26,8,0.45) 40%,
-    rgba(15,26,8,0.6) 70%,
-    rgba(15,26,8,0.75) 100%
+    rgba(15,26,8,0.30) 0%,
+    rgba(15,26,8,0.20) 30%,
+    rgba(15,26,8,0.45) 70%,
+    rgba(15,26,8,0.65) 100%
   );
 }
 
@@ -838,11 +840,66 @@ ul { list-style: none; }
   }
 }
 
+/* --- Mountain Banner --- */
+.mountain-banner {
+  position: relative;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../assets/images/mountain-background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  text-align: center;
+  overflow: hidden;
+}
+
+.mountain-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(15,26,8,0.35) 0%,
+    rgba(15,26,8,0.45) 100%
+  );
+}
+
+.mountain-banner-content {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  padding: 40px 24px;
+}
+
+.mountain-banner-content h3 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  margin-bottom: 12px;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+}
+
+.mountain-banner-content p {
+  font-size: 1.0625rem;
+  color: rgba(255,255,255,0.92);
+  max-width: 600px;
+  margin: 0 auto;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.4);
+}
+
+@media (max-width: 768px) {
+  .mountain-banner {
+    background-attachment: scroll;
+    min-height: 240px;
+  }
+}
+
 /* --- FAQ --- */
 .faq {
   position: relative;
   background:
-    linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)),
+    linear-gradient(rgba(248,246,241,0.78), rgba(248,246,241,0.85)),
     url('../assets/images/mountain-background.jpg') center/cover no-repeat fixed;
 }
 
