@@ -249,7 +249,7 @@ ul { list-style: none; }
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: var(--color-bg-dark);
+  background: var(--color-bg-dark) url('../assets/images/mountain-background.jpg') center bottom/cover no-repeat;
 }
 
 .hero-video-wrap {
@@ -269,9 +269,10 @@ ul { list-style: none; }
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(15,26,8,0.7) 0%,
-    rgba(15,26,8,0.5) 50%,
-    rgba(15,26,8,0.8) 100%
+    rgba(15,26,8,0.65) 0%,
+    rgba(15,26,8,0.45) 40%,
+    rgba(15,26,8,0.6) 70%,
+    rgba(15,26,8,0.75) 100%
   );
 }
 
@@ -901,6 +902,14 @@ ul { list-style: none; }
   line-height: 1.8;
 }
 
+.faq-store-img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: var(--radius-lg);
+  margin-bottom: 24px;
+  box-shadow: var(--shadow);
+}
+
 /* --- CTA Section --- */
 .cta-section {
   position: relative;
@@ -1005,6 +1014,28 @@ ul { list-style: none; }
   border-radius: var(--radius-lg);
   overflow: hidden;
   background: var(--color-bg-alt);
+}
+
+.contact-store-photo {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-bg-alt);
+}
+
+.contact-store-photo img {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
+
+.store-photo-caption {
+  text-align: center;
+  padding: 16px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-text-light);
 }
 
 /* --- Quote Form --- */
