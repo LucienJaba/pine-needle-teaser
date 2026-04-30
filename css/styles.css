@@ -286,11 +286,12 @@ ul { list-style: none; }
   border-bottom: 1px solid var(--color-border);
 }
 
-.craft-strip-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: center;
+.craft-strip-text {
+  text-align: center;
+  margin-bottom: 32px;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .craft-strip-text .section-label {
@@ -299,15 +300,21 @@ ul { list-style: none; }
 
 .craft-strip-text h3 {
   font-family: var(--font-heading);
-  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
   margin: 8px 0 12px;
   color: var(--color-dark);
 }
 
 .craft-strip-text p {
   color: var(--color-text-light);
-  font-size: 1rem;
-  max-width: 480px;
+  font-size: 1.0625rem;
+  margin: 0 auto;
+}
+
+.craft-strip-videos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
 }
 
 .craft-strip-video {
@@ -326,9 +333,9 @@ ul { list-style: none; }
 }
 
 @media (max-width: 768px) {
-  .craft-strip-inner {
+  .craft-strip-videos {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 16px;
   }
   .craft-strip {
     padding: 48px 0;
@@ -512,8 +519,16 @@ ul { list-style: none; }
 /* Apparel Grid */
 .apparel-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(5, 1fr);
   gap: 20px;
+}
+
+@media (max-width: 1024px) {
+  .apparel-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .apparel-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 .apparel-card {
