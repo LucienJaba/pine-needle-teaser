@@ -5,17 +5,20 @@
 
 /* --- CSS Custom Properties --- */
 :root {
-  --color-primary: #618c3c;
-  --color-primary-dark: #4a7a2e;
-  --color-primary-light: #85b365;
-  --color-accent: #c8a45a;
+  /* Heritage palette: brown primary, gold accent, green as subtle support, warm charcoal for dark bands */
+  --color-primary: #5d4530;        /* espresso brown - buttons, brand parent pills */
+  --color-primary-dark: #3d2e20;   /* deeper brown - hover, logo wordmark */
+  --color-primary-light: #8a6c4d;  /* tan - borders, hover edges */
+  --color-accent: #c8a45a;         /* gold - section labels, special accents */
   --color-accent-light: #dfc88a;
+  --color-green: #618c3c;          /* sage - icon tints, occasional accents */
+  --color-green-dark: #4a7a2e;
   --color-dark: #1a1a1a;
   --color-text: #333333;
   --color-text-light: #666666;
   --color-bg: #ffffff;
   --color-bg-alt: #f8f6f1;
-  --color-bg-dark: #3a6a2c;
+  --color-bg-dark: #2a2520;        /* warm charcoal - utility bar, dark sections */
   --color-border: #e5e0d5;
   --font-heading: 'Playfair Display', Georgia, serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -666,8 +669,8 @@ ul { list-style: none; }
 }
 
 .brand-tag.brand-parent:hover {
-  background: var(--color-primary-dark, #1f3a0f);
-  border-color: var(--color-primary-dark, #1f3a0f);
+  background: var(--color-primary-dark, #3d2e20);
+  border-color: var(--color-primary-dark, #3d2e20);
   color: #fff;
 }
 
@@ -1281,7 +1284,7 @@ ul { list-style: none; }
 }
 
 .map-directions:hover {
-  background: var(--color-primary-dark, #1f3a0f);
+  background: var(--color-primary-dark, #3d2e20);
 }
 
 .map-directions svg {
