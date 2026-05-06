@@ -86,7 +86,7 @@
             <source src="assets/videos/best-pine-needles-sweatshirt.mp4" type="video/mp4">
           </video>
         </div>
-        <div class="craft-strip-video">
+        <div class="craft-strip-video craft-strip-video--zoom">
           <video autoplay muted loop playsinline>
             <source src="assets/videos/embroidery-machine.mp4" type="video/mp4">
           </video>
@@ -203,38 +203,46 @@
       <div class="brands-section">
         <h3>Trusted Brand Partners</h3>
         <div class="brands-list">
-          <!-- SanMar group -->
-          <div class="brand-group">
-            <a href="https://www.sanmar.com/" target="_blank" rel="noopener noreferrer" class="brand-tag brand-parent">SanMar</a>
-            <div class="brand-subs">
-              <a href="https://www.carhartt.com/" target="_blank" rel="noopener noreferrer" class="brand-tag brand-sub">Carhartt</a>
-              <a href="https://www.thenorthface.com/" target="_blank" rel="noopener noreferrer" class="brand-tag brand-sub">The North Face</a>
-              <a href="https://www.neweracap.com/" target="_blank" rel="noopener noreferrer" class="brand-tag brand-sub">New Era</a>
-              <a href="https://www.nike.com/" target="_blank" rel="noopener noreferrer" class="brand-tag brand-sub">Nike</a>
+          <!-- Group brands (parent + sub-brands) -->
+          <div class="brand-row brand-row--groups">
+            <!-- SanMar group -->
+            <div class="brand-group">
+              <a href="https://www.sanmar.com/" target="_blank" rel="noopener noreferrer" class="brand-tag brand-parent">SanMar</a>
+              <div class="brand-subs">
+                <a href="https://www.carhartt.com/" target="_blank" rel="noopener noreferrer" class="brand-tag brand-sub">Carhartt</a>
+                <a href="https://www.thenorthface.com/" target="_blank" rel="noopener noreferrer" class="brand-tag brand-sub">The North Face</a>
+                <a href="https://www.neweracap.com/" target="_blank" rel="noopener noreferrer" class="brand-tag brand-sub">New Era</a>
+                <a href="https://www.nike.com/" target="_blank" rel="noopener noreferrer" class="brand-tag brand-sub">Nike</a>
+              </div>
             </div>
-          </div>
-          <!-- S&S Activewear group (replaces AlphaBroder) -->
-          <div class="brand-group">
-            <a href="https://www.ssactivewear.com/" target="_blank" rel="noopener noreferrer" class="brand-tag brand-parent">S&amp;S Activewear</a>
-            <div class="brand-subs">
-              <a href="https://www.imperialheadwear.com/" target="_blank" rel="noopener noreferrer" class="brand-tag brand-sub">Imperial</a>
-              <a href="https://www.yupoong.co.kr/" target="_blank" rel="noopener noreferrer" class="brand-tag brand-sub">Yupoong</a>
+            <!-- S&S Activewear group (replaces AlphaBroder) -->
+            <div class="brand-group">
+              <a href="https://www.ssactivewear.com/" target="_blank" rel="noopener noreferrer" class="brand-tag brand-parent">S&amp;S Activewear</a>
+              <div class="brand-subs">
+                <a href="https://www.imperialheadwear.com/" target="_blank" rel="noopener noreferrer" class="brand-tag brand-sub">Imperial</a>
+                <a href="https://www.yupoong.co.kr/" target="_blank" rel="noopener noreferrer" class="brand-tag brand-sub">Yupoong</a>
+              </div>
             </div>
-          </div>
-          <!-- Augusta group -->
-          <div class="brand-group">
-            <a href="https://augustasportswear.com/" target="_blank" rel="noopener noreferrer" class="brand-tag brand-parent">Augusta Sportswear</a>
-            <div class="brand-subs">
-              <a href="https://augustasportswear.com/" target="_blank" rel="noopener noreferrer" class="brand-tag brand-sub">Momentum Activewear</a>
+            <!-- Augusta group -->
+            <div class="brand-group">
+              <a href="https://augustasportswear.com/" target="_blank" rel="noopener noreferrer" class="brand-tag brand-parent">Augusta Sportswear</a>
+              <div class="brand-subs">
+                <a href="https://augustasportswear.com/" target="_blank" rel="noopener noreferrer" class="brand-tag brand-sub">Momentum Activewear</a>
+              </div>
             </div>
           </div>
           <!-- Standalone partners -->
-          <a href="https://www.stio.com/" target="_blank" rel="noopener noreferrer" class="brand-tag">STIO</a>
-          <a href="https://www.stormtechusa.com/" target="_blank" rel="noopener noreferrer" class="brand-tag">StormTech</a>
-          <a href="https://www.duluthtrading.com/" target="_blank" rel="noopener noreferrer" class="brand-tag">Duluth Trading</a>
-          <a href="https://richardsonsports.com/" target="_blank" rel="noopener noreferrer" class="brand-tag">Richardson</a>
-          <a href="https://www.outdoorcap.com/" target="_blank" rel="noopener noreferrer" class="brand-tag">Outdoor Cap</a>
-          <a href="https://www.bayside.com/" target="_blank" rel="noopener noreferrer" class="brand-tag">Beimar</a>
+          <div class="brand-row brand-row--singles">
+            <span class="brand-row-label">Other Partners</span>
+            <div class="brand-singles">
+              <a href="https://www.stio.com/" target="_blank" rel="noopener noreferrer" class="brand-tag">STIO</a>
+              <a href="https://www.stormtechusa.com/" target="_blank" rel="noopener noreferrer" class="brand-tag">StormTech</a>
+              <a href="https://www.duluthtrading.com/" target="_blank" rel="noopener noreferrer" class="brand-tag">Duluth Trading</a>
+              <a href="https://richardsonsports.com/" target="_blank" rel="noopener noreferrer" class="brand-tag">Richardson</a>
+              <a href="https://www.outdoorcap.com/" target="_blank" rel="noopener noreferrer" class="brand-tag">Outdoor Cap</a>
+              <a href="https://www.bayside.com/" target="_blank" rel="noopener noreferrer" class="brand-tag">Beimar</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -538,15 +546,18 @@
         </div>
         <div class="contact-map">
           <iframe
-            src="https://maps.google.com/maps?q=107%20W%20Little%20Ave%2C%20Driggs%2C%20ID%2083422&t=&z=16&ie=UTF8&iwloc=&output=embed"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-111.1145%2C43.7211%2C-111.1045%2C43.7261&amp;layer=mapnik&amp;marker=43.7236%2C-111.1095"
             width="100%"
             height="100%"
             style="border:0; border-radius: 12px;"
-            allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
             title="Pine Needle Embroidery Location">
           </iframe>
+          <a class="map-directions" href="https://www.google.com/maps/dir/?api=1&amp;destination=107+W+Little+Ave,+Driggs,+ID+83422" target="_blank" rel="noopener noreferrer">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Get Directions
+          </a>
         </div>
       </div>
     </div>
