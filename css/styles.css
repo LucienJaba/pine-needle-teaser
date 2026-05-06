@@ -1236,18 +1236,6 @@ ul { list-style: none; }
   color: var(--color-accent, #c8a45a);
 }
 
-.reviews-stars {
-  display: inline-flex;
-  gap: 2px;
-  margin: 2px 0 8px;
-  color: var(--color-accent, #c8a45a);
-}
-
-.reviews-stars svg {
-  width: 16px;
-  height: 16px;
-}
-
 .reviews-link {
   display: inline-flex;
   align-items: center;
