@@ -1476,8 +1476,8 @@ button.apparel-card {
 
 /* --- Footer --- */
 .footer {
-  background: var(--color-bg-dark);
-  color: rgba(255,255,255,0.7);
+  background: var(--color-primary-dark);
+  color: rgba(255,255,255,0.75);
   padding: 72px 0 0;
 }
 
