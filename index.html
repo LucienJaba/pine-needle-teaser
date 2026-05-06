@@ -95,16 +95,65 @@
     </div>
   </section>
 
-  <!-- Services Section -->
+  <!-- Apparel & Services Section -->
   <section class="section services" id="services">
     <div class="container">
+      <!-- Apparel Categories (now above services) -->
       <div class="section-header">
+        <span class="section-label">Shop by Category</span>
+        <h2>Apparel &amp; Products</h2>
+      </div>
+      <div class="apparel-grid">
+        <!-- Top row: Decoration methods -->
+        <button type="button" class="apparel-card" data-category="embroidery" data-images="assets/images/IMG_7191.jpg|assets/images/IMG_7199.jpg|assets/images/IMG_7189.jpg">
+          <div class="apparel-img" style="background-image:url('assets/images/IMG_7191.jpg')"></div>
+          <span>Embroidery</span>
+        </button>
+        <button type="button" class="apparel-card" data-category="dtg" data-images="assets/images/IMG_7205.jpg|assets/images/IMG_7200.jpg|assets/images/IMG_7207.jpg">
+          <div class="apparel-img" style="background-image:url('assets/images/IMG_7205.jpg')"></div>
+          <span>DTG &mdash; Direct to Garment</span>
+        </button>
+        <button type="button" class="apparel-card" data-category="dtf" data-images="assets/images/IMG_7196.jpg|assets/images/plastic-hat.jpg">
+          <div class="apparel-img" style="background-image:url('assets/images/IMG_7196.jpg')"></div>
+          <span>DTF &mdash; Direct to Film</span>
+        </button>
+        <button type="button" class="apparel-card" data-category="vinyl" data-images="assets/images/IMG_7192.jpg|assets/images/IMG_7196.jpg">
+          <div class="apparel-img" style="background-image:url('assets/images/IMG_7192.jpg')"></div>
+          <span>Vinyl</span>
+        </button>
+        <button type="button" class="apparel-card" data-category="hats" data-images="assets/images/IMG_7201.jpg|assets/images/IMG_7196.jpg|assets/images/plastic-hat.jpg">
+          <div class="apparel-img" style="background-image:url('assets/images/IMG_7201.jpg')"></div>
+          <span>Hats</span>
+        </button>
+        <!-- Bottom row: Categories -->
+        <button type="button" class="apparel-card" data-category="custom-designs" data-images="assets/images/IMG_7207.jpg|assets/images/IMG_7191.jpg">
+          <div class="apparel-img" style="background-image:url('assets/images/IMG_7207.jpg')"></div>
+          <span>Custom Designs</span>
+        </button>
+        <button type="button" class="apparel-card" data-category="locally-crafted" data-images="assets/images/IMG_7203.jpg|assets/images/IMG_7191.jpg|assets/images/IMG_7186.jpg">
+          <div class="apparel-img" style="background-image:url('assets/images/IMG_7203.jpg')"></div>
+          <span>Locally Crafted</span>
+        </button>
+        <button type="button" class="apparel-card" data-category="showroom" data-images="assets/images/IMG_7214.jpg|assets/images/IMG_7219.jpg">
+          <div class="apparel-img" style="background-image:url('assets/images/IMG_7214.jpg')"></div>
+          <span>Showroom</span>
+        </button>
+        <button type="button" class="apparel-card" data-category="customize-colors" data-images="assets/images/IMG_7192.jpg|assets/images/IMG_7196.jpg">
+          <div class="apparel-img" style="background-image:url('assets/images/IMG_7192.jpg')"></div>
+          <span>Custom Colors</span>
+        </button>
+        <button type="button" class="apparel-card" data-category="custom-bags" data-images="assets/images/IMG_7186.jpg|assets/images/IMG_7203.jpg">
+          <div class="apparel-img" style="background-image:url('assets/images/IMG_7186.jpg')"></div>
+          <span>Custom Bags</span>
+        </button>
+      </div>
+
+      <!-- Services / Methods (now below) -->
+      <div class="section-header" style="margin-top:4rem">
         <span class="section-label">What We Do</span>
         <h2>Our Services</h2>
         <p>From custom embroidery to advanced digital printing, we bring your brand to life on premium apparel.</p>
       </div>
-
-      <!-- Printing Methods -->
       <div class="services-methods">
         <div class="method-card">
           <div class="method-icon">
@@ -124,8 +173,8 @@
           <div class="method-icon">
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
           </div>
-          <h3>Sublimation Print</h3>
-          <p>Vibrant, all-over prints on polyester and rayon fabrics. Colors that last and won't crack, peel, or fade.</p>
+          <h3>Vinyl Print</h3>
+          <p>Heat-pressed vinyl graphics that hold up to wash after wash. Sharp lines, bold colors, and clean cut detail &mdash; perfect for names, numbers, and logos.</p>
         </div>
         <div class="method-card">
           <div class="method-icon">
@@ -136,10 +185,10 @@
         </div>
         <div class="method-card">
           <div class="method-icon">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg>
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/><path d="M8 12h8M8 8h6"/></svg>
           </div>
-          <h3>Screen Printing</h3>
-          <p>Classic screen printing for bulk orders. Bold colors and sharp lines ideal for team gear and merchandise.</p>
+          <h3>Basic Alterations</h3>
+          <p>Hemming, repairs, patch placement, and small adjustments. We treat alterations with the same care as a custom build.</p>
         </div>
         <div class="method-card">
           <div class="method-icon">
@@ -150,71 +199,41 @@
         </div>
       </div>
 
-      <!-- Apparel Categories -->
-      <div class="section-header" style="margin-top:4rem">
-        <span class="section-label">Shop by Category</span>
-        <h2>Apparel &amp; Products</h2>
-      </div>
-      <div class="apparel-grid">
-        <button type="button" class="apparel-card" data-category="sweatshirts" data-images="assets/images/IMG_7199.jpg|assets/images/IMG_7189.jpg">
-          <div class="apparel-img" style="background-image:url('assets/images/IMG_7199.jpg')"></div>
-          <span>Sweatshirts</span>
-        </button>
-        <button type="button" class="apparel-card" data-category="long-sleeve" data-images="assets/images/IMG_7200.jpg|assets/images/IMG_7214.jpg">
-          <div class="apparel-img" style="background-image:url('assets/images/IMG_7200.jpg')"></div>
-          <span>Long Sleeve</span>
-        </button>
-        <button type="button" class="apparel-card" data-category="hats" data-images="assets/images/IMG_7201.jpg|assets/images/IMG_7196.jpg|assets/images/plastic-hat.jpg">
-          <div class="apparel-img" style="background-image:url('assets/images/IMG_7201.jpg')"></div>
-          <span>Hats</span>
-        </button>
-        <button type="button" class="apparel-card" data-category="custom-mugs" data-images="assets/images/IMG_7215.jpg|assets/images/IMG_7203.jpg|assets/images/IMG_7196.jpg">
-          <div class="apparel-img" style="background-image:url('assets/images/IMG_7215.jpg')"></div>
-          <span>Custom Mugs</span>
-        </button>
-        <button type="button" class="apparel-card" data-category="t-shirts" data-images="assets/images/IMG_7205.jpg|assets/images/IMG_7200.jpg|assets/images/IMG_7207.jpg">
-          <div class="apparel-img" style="background-image:url('assets/images/IMG_7205.jpg')"></div>
-          <span>T-Shirts</span>
-        </button>
-        <button type="button" class="apparel-card" data-category="ladies" data-images="assets/images/IMG_7206.jpg|assets/images/IMG_7199.jpg">
-          <div class="apparel-img" style="background-image:url('assets/images/IMG_7206.jpg')"></div>
-          <span>Ladies</span>
-        </button>
-        <button type="button" class="apparel-card" data-category="showroom" data-images="assets/images/IMG_7214.jpg|assets/images/IMG_7219.jpg|assets/images/IMG_7215.jpg">
-          <div class="apparel-img" style="background-image:url('assets/images/IMG_7214.jpg')"></div>
-          <span>Showroom</span>
-        </button>
-        <button type="button" class="apparel-card" data-category="custom-designs" data-images="assets/images/IMG_7207.jpg|assets/images/IMG_7191.jpg">
-          <div class="apparel-img" style="background-image:url('assets/images/IMG_7207.jpg')"></div>
-          <span>Custom Designs</span>
-        </button>
-        <button type="button" class="apparel-card" data-category="locally-crafted" data-images="assets/images/IMG_7203.jpg|assets/images/IMG_7191.jpg|assets/images/IMG_7186.jpg">
-          <div class="apparel-img" style="background-image:url('assets/images/IMG_7203.jpg')"></div>
-          <span>Locally Crafted</span>
-        </button>
-        <button type="button" class="apparel-card" data-category="customize-colors" data-images="assets/images/IMG_7192.jpg|assets/images/IMG_7196.jpg">
-          <div class="apparel-img" style="background-image:url('assets/images/IMG_7192.jpg')"></div>
-          <span>Customize Colors</span>
-        </button>
-      </div>
-
       <!-- Partner Brands -->
       <div class="brands-section">
         <h3>Trusted Brand Partners</h3>
         <div class="brands-list">
-          <a href="https://www.thenorthface.com/" target="_blank" rel="noopener noreferrer" class="brand-tag">The North Face</a>
+          <!-- SanMar group -->
+          <div class="brand-group">
+            <a href="https://www.sanmar.com/" target="_blank" rel="noopener noreferrer" class="brand-tag brand-parent">SanMar</a>
+            <div class="brand-subs">
+              <a href="https://www.carhartt.com/" target="_blank" rel="noopener noreferrer" class="brand-tag brand-sub">Carhartt</a>
+              <a href="https://www.thenorthface.com/" target="_blank" rel="noopener noreferrer" class="brand-tag brand-sub">The North Face</a>
+              <a href="https://www.neweracap.com/" target="_blank" rel="noopener noreferrer" class="brand-tag brand-sub">New Era</a>
+              <a href="https://www.nike.com/" target="_blank" rel="noopener noreferrer" class="brand-tag brand-sub">Nike</a>
+            </div>
+          </div>
+          <!-- S&S Activewear group (replaces AlphaBroder) -->
+          <div class="brand-group">
+            <a href="https://www.ssactivewear.com/" target="_blank" rel="noopener noreferrer" class="brand-tag brand-parent">S&amp;S Activewear</a>
+            <div class="brand-subs">
+              <a href="https://www.imperialheadwear.com/" target="_blank" rel="noopener noreferrer" class="brand-tag brand-sub">Imperial</a>
+              <a href="https://www.yupoong.co.kr/" target="_blank" rel="noopener noreferrer" class="brand-tag brand-sub">Yupoong</a>
+            </div>
+          </div>
+          <!-- Augusta group -->
+          <div class="brand-group">
+            <a href="https://augustasportswear.com/" target="_blank" rel="noopener noreferrer" class="brand-tag brand-parent">Augusta Sportswear</a>
+            <div class="brand-subs">
+              <a href="https://augustasportswear.com/" target="_blank" rel="noopener noreferrer" class="brand-tag brand-sub">Momentum Activewear</a>
+            </div>
+          </div>
+          <!-- Standalone partners -->
           <a href="https://www.stio.com/" target="_blank" rel="noopener noreferrer" class="brand-tag">STIO</a>
-          <a href="https://www.carhartt.com/" target="_blank" rel="noopener noreferrer" class="brand-tag">Carhartt</a>
           <a href="https://www.stormtechusa.com/" target="_blank" rel="noopener noreferrer" class="brand-tag">StormTech</a>
           <a href="https://www.duluthtrading.com/" target="_blank" rel="noopener noreferrer" class="brand-tag">Duluth Trading</a>
-          <a href="https://www.sanmar.com/" target="_blank" rel="noopener noreferrer" class="brand-tag">SanMar</a>
-          <a href="https://www.alphabroder.com/" target="_blank" rel="noopener noreferrer" class="brand-tag">AlphaBroder</a>
           <a href="https://richardsonsports.com/" target="_blank" rel="noopener noreferrer" class="brand-tag">Richardson</a>
           <a href="https://www.outdoorcap.com/" target="_blank" rel="noopener noreferrer" class="brand-tag">Outdoor Cap</a>
-          <a href="https://www.imperialheadwear.com/" target="_blank" rel="noopener noreferrer" class="brand-tag">Imperial</a>
-          <a href="https://www.yupoong.co.kr/" target="_blank" rel="noopener noreferrer" class="brand-tag">Yupoong</a>
-          <a href="https://www.neweracap.com/" target="_blank" rel="noopener noreferrer" class="brand-tag">New Era</a>
-          <a href="https://augustasportswear.com/" target="_blank" rel="noopener noreferrer" class="brand-tag">Augusta Sportswear</a>
           <a href="https://www.bayside.com/" target="_blank" rel="noopener noreferrer" class="brand-tag">Beimar</a>
         </div>
       </div>
@@ -398,7 +417,7 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
           <div class="faq-answer">
-            <p>We offer Screen Printing, Direct to Garment Printing on cotton blends, Sublimation Printing on polyester and rayon, Heat Transfer Printing on various fabrics, Die-cut Vinyl, and Custom Patches (iron-on and sew-on).</p>
+            <p>We offer Custom Embroidery, Direct to Garment (DTG) Printing on cotton blends, Direct to Film (DTF) Transfer, Heat Transfer Printing on various fabrics, Vinyl Printing, Die-cut Vinyl, Custom Patches (iron-on and sew-on), and Basic Alterations.</p>
           </div>
         </div>
         <div class="faq-item">
@@ -407,7 +426,7 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
           <div class="faq-answer">
-            <p>Embroidery is priced by stitch count with an average setup fee of $60. Individual sew runs approximately $10 with a minimum charge of $8.50. Discounts are available on orders exceeding 75 pieces. Digital printing starts around $6.00 for chest logos and $14-$16 for larger back designs.</p>
+            <p>Embroidery is priced by stitch count with an average setup fee of $60. Individual sew runs approximately $10 with a minimum charge of $8.50. Discounts are available on orders exceeding 75 pieces. Digital printing runs $1 per inch with a $4 minimum.</p>
           </div>
         </div>
         <div class="faq-item">
@@ -434,7 +453,7 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
           <div class="faq-answer">
-            <p>Yes! We are an approved embroidery shop for The North Face and frequently do sewing for STIO. We also partner with Carhartt, StormTech, Duluth Trading, Richardson, and many other premium brands.</p>
+            <p>Yes! We are an approved embroidery shop for The North Face and frequently do sewing for STIO. We also partner with Nike, Imperial, Carhartt, StormTech, Duluth Trading, Richardson, and many other premium brands.</p>
           </div>
         </div>
         <div class="faq-item">
@@ -452,7 +471,7 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
           <div class="faq-answer">
-            <p>We welcome visitors to our shop at 107 W. Little Ave, Driggs, ID. Our team loves making new friends and establishing new relationships! Stop by our showroom to browse blank brands and see samples &mdash; pick out your favorites and we'll add your custom logos right here in-house. Our hours are Monday to Friday, 8:30 AM to 5:00 PM (closed 12:00-1:00 PM for lunch).</p>
+            <p>We welcome visitors to our shop at 107 W. Little Ave, Driggs, ID. Our team loves making new friends and establishing new relationships! Stop by our showroom to browse blank brands and see samples &mdash; pick out your favorites and we'll add your custom logos right here in-house. Our hours are Monday to Friday, 8:30 AM to 5:00 PM.</p>
           </div>
         </div>
       </div>
@@ -494,7 +513,8 @@
             </div>
             <div>
               <h4>Call Us</h4>
-              <p><a href="tel:+12083547648">(208) 354-7648</a></p>
+              <p><a href="tel:+12083547648">(208) 354-7648</a> &nbsp;<small>Shop</small></p>
+              <p><a href="tel:+12083998290">(208) 399-8290</a> &nbsp;<small>Cell</small></p>
             </div>
           </div>
           <div class="contact-card">
@@ -512,7 +532,7 @@
             </div>
             <div>
               <h4>Business Hours</h4>
-              <p>Monday - Friday<br>8:30 AM - 5:00 PM<br><small>(Closed 12:00 - 1:00 PM for lunch)</small></p>
+              <p>Monday - Friday<br>8:30 AM - 5:00 PM</p>
             </div>
           </div>
         </div>
@@ -540,7 +560,12 @@
         <h2>Get a Quick Quote</h2>
         <p>Tell us about your project and we'll get back to you with a custom quote.</p>
       </div>
-      <form class="quote-form" id="quoteForm">
+      <form class="quote-form" id="quoteForm" action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data">
+        <!-- Web3Forms hidden fields -->
+        <input type="hidden" name="access_key" value="REPLACE_WITH_WEB3FORMS_ACCESS_KEY">
+        <input type="hidden" name="subject" value="New Quote Request — Pine Needle Embroidery">
+        <input type="hidden" name="from_name" value="Pine Needle Quote Form">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
         <div class="form-row">
           <div class="form-group">
             <label for="name">Your Name *</label>
@@ -561,12 +586,13 @@
             <select id="service" name="service" required>
               <option value="">Select a service...</option>
               <option value="embroidery">Custom Embroidery</option>
-              <option value="dtg">Direct to Garment Printing</option>
-              <option value="sublimation">Sublimation Printing</option>
+              <option value="dtg">DTG &mdash; Direct to Garment</option>
+              <option value="dtf">DTF &mdash; Direct to Film</option>
               <option value="heat-transfer">Heat Transfer Printing</option>
-              <option value="screen-print">Screen Printing</option>
+              <option value="vinyl">Vinyl Print</option>
+              <option value="alterations">Basic Alterations</option>
               <option value="patches">Custom Patches</option>
-              <option value="vinyl">Die-cut Vinyl</option>
+              <option value="diecut-vinyl">Die-cut Vinyl</option>
               <option value="other">Other / Not Sure</option>
             </select>
           </div>
@@ -629,9 +655,9 @@
           <ul>
             <li><a href="#services">Custom Embroidery</a></li>
             <li><a href="#services">Direct to Garment</a></li>
-            <li><a href="#services">Sublimation Print</a></li>
+            <li><a href="#services">Vinyl Print</a></li>
             <li><a href="#services">Heat Transfer</a></li>
-            <li><a href="#services">Screen Printing</a></li>
+            <li><a href="#services">Basic Alterations</a></li>
             <li><a href="#services">Custom Patches</a></li>
           </ul>
         </div>

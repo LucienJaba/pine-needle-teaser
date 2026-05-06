@@ -200,53 +200,44 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- Form handling ---
+  // --- Form handling (Web3Forms) ---
   const quoteForm = document.getElementById('quoteForm');
   if (quoteForm) {
-    quoteForm.addEventListener('submit', (e) => {
+    quoteForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      const formData = new FormData(quoteForm);
-      const data = Object.fromEntries(formData);
-
-      // Build file list info
-      const fileNames = fileInput && fileInput.files.length
-        ? Array.from(fileInput.files).map(f => `- ${f.name} (${(f.size/1024).toFixed(0)}KB)`).join('\n')
-        : 'No files attached';
-
-      // Build mailto link as simple fallback
-      const subject = encodeURIComponent('Quote Request from ' + data.name);
-      const body = encodeURIComponent(
-        `Name: ${data.name}\n` +
-        `Email: ${data.email}\n` +
-        `Phone: ${data.phone || 'Not provided'}\n` +
-        `Service: ${data.service}\n` +
-        `Quantity: ${data.quantity || 'Not specified'}\n` +
-        `Needed By: ${data.deadline || 'Flexible'}\n\n` +
-        `Project Details:\n${data.message}\n\n` +
-        `Attached Files:\n${fileNames}\n\n` +
-        `(Please attach the listed files manually to this email — file uploads will be supported on the live site.)`
-      );
-
-      // Show success message
       const btn = quoteForm.querySelector('button[type="submit"]');
       const originalText = btn.textContent;
-      btn.textContent = 'Opening your email…';
+      btn.textContent = 'Sending…';
       btn.disabled = true;
 
-      // Open email client
-      window.location.href = `mailto:pineneedleemb@silverstar.com?subject=${subject}&body=${body}`;
+      try {
+        const formData = new FormData(quoteForm);
+        const response = await fetch(quoteForm.action, {
+          method: 'POST',
+          body: formData
+        });
+        const result = await response.json();
+
+        if (result.success) {
+          btn.textContent = 'Quote Request Sent!';
+          btn.style.background = '#4a7a2e';
+          quoteForm.reset();
+          if (fileList) fileList.innerHTML = '';
+        } else {
+          throw new Error(result.message || 'Submission failed');
+        }
+      } catch (err) {
+        btn.textContent = 'Error — please try again or call us';
+        btn.style.background = '#a83232';
+        console.error('Form submission error:', err);
+      }
 
       setTimeout(() => {
-        btn.textContent = 'Quote Request Sent!';
-        btn.style.background = '#4a7a2e';
-        setTimeout(() => {
-          btn.textContent = originalText;
-          btn.disabled = false;
-          btn.style.background = '';
-          quoteForm.reset();
-        }, 3000);
-      }, 1000);
+        btn.textContent = originalText;
+        btn.disabled = false;
+        btn.style.background = '';
+      }, 4000);
     });
   }
 });
