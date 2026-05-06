@@ -1226,6 +1226,41 @@ ul { list-style: none; }
   color: var(--color-primary);
 }
 
+.contact-card--reviews {
+  background: linear-gradient(135deg, rgba(200,164,90,0.08), rgba(45,80,22,0.04));
+  border-color: rgba(200,164,90,0.35);
+}
+
+.contact-icon--gold {
+  background: rgba(200,164,90,0.14);
+  color: var(--color-accent, #c8a45a);
+}
+
+.reviews-stars {
+  display: inline-flex;
+  gap: 2px;
+  margin: 2px 0 8px;
+  color: var(--color-accent, #c8a45a);
+}
+
+.reviews-stars svg {
+  width: 16px;
+  height: 16px;
+}
+
+.reviews-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+.reviews-link:hover {
+  text-decoration: underline;
+}
+
 .contact-map {
   position: relative;
   min-height: 400px;
