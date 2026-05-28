@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- Form handling (Web3Forms) ---
+  // --- Form handling (Netlify Forms) ---
   const quoteForm = document.getElementById('quoteForm');
   if (quoteForm) {
     quoteForm.addEventListener('submit', async (e) => {
@@ -213,19 +213,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
       try {
         const formData = new FormData(quoteForm);
-        const response = await fetch(quoteForm.action, {
+        // Netlify expects POST to the page itself with multipart/form-data when files are attached
+        const response = await fetch('/', {
           method: 'POST',
           body: formData
         });
-        const result = await response.json();
 
-        if (result.success) {
+        if (response.ok) {
           btn.textContent = 'Quote Request Sent!';
           btn.style.background = '#4a7a2e';
           quoteForm.reset();
           if (fileList) fileList.innerHTML = '';
         } else {
-          throw new Error(result.message || 'Submission failed');
+          throw new Error('Submission failed (status ' + response.status + ')');
         }
       } catch (err) {
         btn.textContent = 'Error — please try again or call us';
