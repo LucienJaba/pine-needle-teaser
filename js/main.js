@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Scroll Animations ---
   const animateElements = document.querySelectorAll(
-    '.method-card, .apparel-card, .highlight-card, .contact-card, .faq-item, .story-content, .story-images, .video-card, .photo-item'
+    '.method-card, .apparel-card, .highlight-card, .contact-card, .faq-item, .story-photo, .story-bio, .video-card, .photo-item'
   );
 
   animateElements.forEach(el => el.classList.add('fade-in'));
