@@ -172,6 +172,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   animateElements.forEach(el => el.classList.add('fade-in'));
 
+  // Stagger reveals within each grid/row for a premium cascade
+  const revealGroups = new Set();
+  animateElements.forEach(el => revealGroups.add(el.parentElement));
+  revealGroups.forEach(parent => {
+    parent.querySelectorAll(':scope > .fade-in').forEach((el, i) => {
+      el.style.transitionDelay = `${(i % 6) * 80}ms`;
+    });
+  });
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
