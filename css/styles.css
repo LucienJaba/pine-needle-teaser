@@ -691,7 +691,8 @@ ul { list-style: none; }
 
 /* --- Story (stacked: header → photo → bio → stats footer) --- */
 .story-photo {
-  margin: 0 0 44px;
+  max-width: 1000px;
+  margin: 0 auto 44px;
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-lg);
@@ -1650,6 +1651,11 @@ button.apparel-card {
   .section { padding: 64px 0; }
   .hero { min-height: 85vh; }
 
+  /* iOS/Android don't support background-attachment:fixed reliably —
+     it over-zooms and jumps. Pin backgrounds to scroll on mobile. */
+  .faq, .cta-bg { background-attachment: scroll !important; }
+  .cta-bg { background-position: center; }
+
   .services-methods { grid-template-columns: 1fr; }
   .apparel-grid { grid-template-columns: repeat(2, 1fr); }
   .video-gallery { grid-template-columns: 1fr; }
@@ -1668,8 +1674,7 @@ button.apparel-card {
 
 @media (max-width: 480px) {
   .hero-badges { flex-direction: column; align-items: center; gap: 12px; }
-  .apparel-grid { grid-template-columns: 1fr; }
-  .photo-grid { grid-template-columns: 1fr; }
+  /* Keep image grids two-up on phones — single column made thumbnails huge */
   .highlights-grid { grid-template-columns: 1fr; }
   .hero-buttons { flex-direction: column; align-items: center; }
   .btn { width: 100%; }
@@ -1757,7 +1762,7 @@ h1, h2, h3, .logo-text { letter-spacing:-0.015em; }
 .btn-quote:hover { transform:translateY(-1px); box-shadow:0 6px 18px rgba(42,82,57,.3); }
 
 /* ===== Section headers — gold accent underline ===== */
-.section-header h2 { display:inline-block; position:relative; padding-bottom:16px; }
+.section-header h2 { display:block; position:relative; padding-bottom:16px; }
 .section-header h2::after {
   content:""; position:absolute; left:50%; bottom:0; transform:translateX(-50%);
   width:56px; height:3px; border-radius:2px;
