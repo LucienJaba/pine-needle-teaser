@@ -208,45 +208,57 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
-
-  // --- Form handling (Netlify Forms) ---
+  // --- Form handling (Web3Forms) ---
   const quoteForm = document.getElementById('quoteForm');
   if (quoteForm) {
+    const fileInput = document.getElementById('files');
+    const MAX_BYTES = 25 * 1024 * 1024;
+
     quoteForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
+      if (fileInput && fileInput.files.length > 0) {
+        for (const file of fileInput.files) {
+          if (file.size > MAX_BYTES) {
+            alert('"' + file.name + '" is too large (' + (file.size/1024/1024).toFixed(1) + ' MB). Each file must be under 25 MB.');
+            return;
+          }
+        }
+      }
+
       const btn = quoteForm.querySelector('button[type="submit"]');
-      const originalText = btn.textContent;
       btn.textContent = 'Sending…';
       btn.disabled = true;
 
       try {
         const formData = new FormData(quoteForm);
-        // Netlify expects POST to the page itself with multipart/form-data when files are attached
-        const response = await fetch('/', {
-          method: 'POST',
-          body: formData
-        });
+        formData.append('access_key', '399fa42a-5458-4b84-a166-d78f18814184');
+        if (!formData.get('subject')) {
+          formData.append('subject', 'Quote Request from ' + (formData.get('name') || 'website'));
+        }
 
-        if (response.ok) {
-          btn.textContent = 'Quote Request Sent!';
-          btn.style.background = '#4a7a2e';
-          quoteForm.reset();
-          if (fileList) fileList.innerHTML = '';
+        const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: formData });
+        const data = await res.json();
+
+        if (data.success) {
+          quoteForm.innerHTML = '<div style="text-align:center; padding:48px 24px;">'
+            + '<h3 style="font-family: var(--font-heading); font-size: 1.75rem; color: var(--color-primary-dark); margin-bottom: 12px;">Thank you!</h3>'
+            + '<p style="color: var(--color-text-light); font-size: 1.0625rem; max-width:520px; margin:0 auto;">'
+            + 'Your quote request was sent successfully. We will reply within 1–2 business days.'
+            + '</p></div>';
+          quoteForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
         } else {
-          throw new Error('Submission failed (status ' + response.status + ')');
+          btn.textContent = 'Send failed — try again';
+          btn.disabled = false;
+          btn.style.background = '#c43c3c';
+          alert("Something went wrong sending your quote. Please try again, or call us directly at (208) 354-7648.");
         }
       } catch (err) {
-        btn.textContent = 'Error — please try again or call us';
-        btn.style.background = '#a83232';
-        console.error('Form submission error:', err);
-      }
-
-      setTimeout(() => {
-        btn.textContent = originalText;
+        btn.textContent = 'Network error — try again';
         btn.disabled = false;
-        btn.style.background = '';
-      }, 4000);
+        btn.style.background = '#c43c3c';
+        alert("Network problem — please check your connection and try again, or call us at (208) 354-7648.");
+      }
     });
   }
 });

@@ -1848,3 +1848,10 @@ h1, h2, h3, .logo-text { letter-spacing:-0.015em; }
 /* ===== Scroll reveal — smoother easing + stagger (delay set inline by JS) ===== */
 .fade-in { transition: opacity .7s var(--ease-out-soft), transform .7s var(--ease-out-soft); transform: translateY(28px); }
 .fade-in.visible { transform: translateY(0); }
+
+
+/* Mobile menu fix — disable navbar backdrop-filter at phone widths so the
+   position:fixed menu can fill the viewport instead of anchoring to navbar */
+@media (max-width: 768px) {
+  .navbar { backdrop-filter: none; -webkit-backdrop-filter: none; }
+}
